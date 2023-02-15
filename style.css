@@ -46,7 +46,7 @@ p {
   text-align: center;
 }
 .quantity-button {
-  border-radius: 100%; /* TODO: why is the text not centered on my phone? */
+  border-radius: 100%;
   width: 30px;
   height: 30px;
   display: flex;

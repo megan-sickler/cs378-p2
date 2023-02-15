@@ -1,16 +1,19 @@
-// TODO: should i be storing this data or getting it from the site every time
+// store quantities and prices of all items
 let quantities = {tacos: 0, churros: 0, margaritas: 0, chips: 0};
-let prices = {tacos: 3, churros: 2, margaritas: 5, chips: 3}; // TODO: variable in multiple places if the restaurant wants to change it :(
+let prices = {tacos: 3, churros: 2, margaritas: 5, chips: 3};
 
+// store subtotal as it changes
 let subtotal = 0;
 
-// button id is the id of the button that was clicked (item-name-direction)
+/* The editQuantity method is called each time a +/- button is clicked.
+   The parameter button_id is the id of the button that was clicked, in
+   the format 'itemname-direction'. */
 function editQuantity(button_id) {
     
-    // ie tacos, churros, margaritas, or chips
+    // item_type is tacos, churros, margaritas, or chips
     let item_type = button_id.substring(0, button_id.indexOf("-"));
 
-    // ie inc or dec
+    // action_type is inc or dec
     let action_type = button_id.substring(button_id.indexOf("-") + 1);
 
     // edit 'quantities' object and total_price variable accordingly
@@ -27,6 +30,8 @@ function editQuantity(button_id) {
     document.getElementById("subtotal").innerHTML = "Subtotal: $" + subtotal;
 }
 
+/* The clearAll function is called each time the "Clear All" button is clicked.
+   It sets all items' quantities to 0 and resets the subtotal to $0. */
 function clearAll() {
     
     // edit stored & displayed quantity of each item
@@ -40,6 +45,9 @@ function clearAll() {
     document.getElementById("subtotal").innerHTML = "Subtotal: $0";
 }
 
+/* The order function is called every time the "Order" button is clicked.
+   If no items are in the cart, it alerts the user of the issue. Otherwise,
+   it thanks the user for their order and tells them what they ordered. */
 function order() {
     if (subtotal === 0) {
         alert("Error: no items in cart.")
