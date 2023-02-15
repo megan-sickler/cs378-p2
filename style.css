@@ -52,16 +52,19 @@ p {
   display: flex;
   justify-content: center;
   text-align: center;
+  color: black;
 }
 #order-button {
   border-radius: 12px;
   padding-right: 10px;
   padding-left: 10px;
   background-color: #faba19;
+  color: black;
 }
 #clear-all-button {
   border-radius: 12px;
   padding-right: 10px;
   padding-left: 10px;
+  color: black;
 }
 
